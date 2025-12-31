@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fans Zone - Vente de Maillots</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+}
+header {
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+}
+section {
+  padding: 20px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+.product {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.product h3 {
+  margin: 10px 0;
+}
+.price {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+button {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+button:hover {
+  background: #1ebe5d;
+}
+.contact {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Fans Zone</h1>
+  <p>Maillots stylés • Qualité Player • Prix accessibles</p>
+</header>
+
+<section>
+  <h2>Nos Maillots</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <h3>Real Madrid - Version Player</h3>
+      <p class="price">7 000 FCFA</p>
+      <button onclick="order('Real Madrid Version Player')">Commander</button>
+    </div>
+
+    <div class="product">
+      <h3>Real Madrid - Version Fan</h3>
+      <p class="price">6 000 FCFA</p>
+      <button onclick="order('Real Madrid Version Fan')">Commander</button>
+    </div>
+
+    <div class="product">
+      <h3>PSG - Version Player</h3>
+      <p class="price">7 000 FCFA</p>
+      <button onclick="order('PSG Version Player')">Commander</button>
+    </div>
+
+    <div class="product">
+      <h3>PSG - Version Fan</h3>
+      <p class="price">6 000 FCFA</p>
+      <button onclick="order('PSG Version Fan')">Commander</button>
+    </div>
+
+    <div class="product">
+      <h3>Barça - Version Player</h3>
+      <p class="price">7 000 FCFA</p>
+      <button onclick="order('Barça Version Player')">Commander</button>
+    </div>
+
+    <div class="product">
+      <h3>Barça - Version Fan</h3>
+      <p class="price">6 000 FCFA</p>
+      <button onclick="order('Barça Version Fan')">Commander</button>
+    </div>
+
+  </div>
+</section>
+
+<div class="contact">
+  <h2>Commander maintenant</h2>
+  <p>📞 WhatsApp : 74 87 88 19</p>
+  <p>📍 Mali</p>
+</div>
+
+<script>
+function order(product) {
+  const phone = "22374878819";
+  const message = encodeURIComponent(
+    "Bonjour Fans Zone, je souhaite commander : " + product + ". Taille : "
+  );
+  window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
