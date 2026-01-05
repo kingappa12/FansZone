@@ -191,6 +191,18 @@ function searchItems() {
 }
 
 document.getElementById("searchInput").addEventListener("keyup", searchItems);
+</script><script>
+function filterContinent(continent) {
+  let items = document.getElementsByClassName("item");
+
+  for (let i = 0; i < items.length; i++) {
+    if (continent === "all") {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = items[i].classList.contains(continent) ? "block" : "none";
+    }
+  }
+}
 </script>
 
 </body>
