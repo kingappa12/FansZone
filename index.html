@@ -269,7 +269,70 @@ function filterContinent(continent) {
     }
   }
 }
-</script>
+<script>
+  const maillots = [
+    // 🇪🇺 CLUBS EUROPE
+    { nom: "Real Madrid", player: 7000, fan: 6000 },
+    { nom: "FC Barcelona", player: 7000, fan: 6000 },
+    { nom: "PSG", player: 7000, fan: 6000 },
+    { nom: "Manchester City", player: 7000, fan: 6000 },
+    { nom: "Manchester United", player: 7000, fan: 6000 },
+    { nom: "Chelsea", player: 7000, fan: 6000 },
+    { nom: "Arsenal", player: 7000, fan: 6000 },
+    { nom: "Liverpool", player: 7000, fan: 6000 },
+    { nom: "AC Milan", player: 7000, fan: 6000 },
+    { nom: "Inter Milan", player: 7000, fan: 6000 },
+    { nom: "Juventus", player: 7000, fan: 6000 },
+    { nom: "Bayern Munich", player: 7000, fan: 6000 },
+
+    // 🌍 SÉLECTIONS
+    { nom: "France", player: 7000, fan: 6000 },
+    { nom: "Brésil", player: 7000, fan: 6000 },
+    { nom: "Argentine", player: 7000, fan: 6000 },
+    { nom: "Portugal", player: 7000, fan: 6000 },
+    { nom: "Allemagne", player: 7000, fan: 6000 },
+
+    // 🌍 AFRIQUE
+    { nom: "Sénégal", player: 7000, fan: 6000 },
+    { nom: "Maroc", player: 7000, fan: 6000 },
+    { nom: "Mali", player: 7000, fan: 6000 },
+    { nom: "Côte d’Ivoire", player: 7000, fan: 6000 },
+    { nom: "Nigeria", player: 7000, fan: 6000 },
+    { nom: "Cameroun", player: 7000, fan: 6000 }
+  ];
+
+  const container = document.getElementById("maillots");
+
+  maillots.forEach(m => {
+    container.innerHTML += `
+      <div class="card">
+        <h3>${m.nom}</h3>
+
+        <p>Version Player – ${m.player} FCFA</p>
+        <button onclick="commander('${m.nom}', 'Version Player')">
+          Commander Player
+        </button>
+
+        <p>Version Fan – ${m.fan} FCFA</p>
+        <button onclick="commander('${m.nom}', 'Version Fan')">
+          Commander Fan
+        </button>
+      </div>
+    `;
+  });
+
+  function commander(maillot, version) {
+    const taille = prompt("Entrez la taille (S, M, L, XL, XXL) :");
+    if (!taille) return;
+
+    const message =
+      `Bonjour Fans Zone, je souhaite commander : ${maillot} ${version}. Taille : ${taille}`;
+
+    const numero = "22374878819";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+</script></script>
 
 </body>
 </html>
