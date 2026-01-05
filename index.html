@@ -179,7 +179,19 @@
 <footer>
   <p>📞 Commandes WhatsApp : 74 87 88 19</p>
   <p>Fans Zone © 2026</p>
-</footer>
+</footer><script>
+function searchItems() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let items = document.getElementsByClassName("item");
+
+  for (let i = 0; i < items.length; i++) {
+    let text = items[i].innerText.toLowerCase();
+    items[i].style.display = text.includes(input) ? "block" : "none";
+  }
+}
+
+document.getElementById("searchInput").addEventListener("keyup", searchItems);
+</script>
 
 </body>
 </html>
